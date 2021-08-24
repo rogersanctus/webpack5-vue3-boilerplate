@@ -12,10 +12,7 @@ module.exports = merge(common, {
   optimization: {
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
-    minimizer: [
-      `...`,
-      new CssMinimizerPlugin()
-    ],
+    minimizer: [`...`, new CssMinimizerPlugin()],
     splitChunks: {
       cacheGroups: {
         vendor: {
@@ -41,7 +38,7 @@ module.exports = merge(common, {
                   importLoaders: 1,
                   url: false
                 }
-              },
+              }
             ]
           },
           {
@@ -55,14 +52,12 @@ module.exports = merge(common, {
                   url: false
                 }
               },
-              'sass-loader',
+              'sass-loader'
             ]
           }
         ]
       }
     ]
   },
-  plugins: [
-    new MiniCssExtractPlugin()
-  ]
+  plugins: [new MiniCssExtractPlugin()]
 })

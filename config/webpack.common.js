@@ -20,7 +20,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
       filename: 'index.html',
-      title: "Vue 3 and Webpack 5 Boilerplate"
+      title: 'Vue 3 and Webpack 5 Boilerplate'
     })
   ],
   module: {
@@ -38,14 +38,19 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        "exclude": [/node_modules/, /core-js/, /webpack\/buildin/, /@babel\/runtime-corejs3/],
+        exclude: [
+          /node_modules/,
+          /core-js/,
+          /webpack\/buildin/,
+          /@babel\/runtime-corejs3/
+        ],
         use: ['thread-loader', 'babel-loader']
       },
       // images
       {
         test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
         type: 'asset',
-        generator: { filename: 'img/[contenthash:8][ext][query]' },
+        generator: { filename: 'img/[contenthash:8][ext][query]' }
       },
 
       // do not base64-inline SVGs.
@@ -53,13 +58,13 @@ module.exports = {
       {
         test: /\.(svg)(\?.*)?$/,
         type: 'asset/resource',
-        generator: { filename: 'img/[contenthash:8][ext][query]' },
+        generator: { filename: 'img/[contenthash:8][ext][query]' }
       },
       // fonts
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         type: 'asset',
-        generator: { filename: 'fonts/[contenthash:8][ext][query]' },
+        generator: { filename: 'fonts/[contenthash:8][ext][query]' }
       }
     ]
   }
