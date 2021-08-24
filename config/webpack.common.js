@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
@@ -21,6 +22,10 @@ module.exports = {
       template: path.resolve(__dirname, '../src/index.html'),
       filename: 'index.html',
       title: 'Vue 3 and Webpack 5 Boilerplate'
+    }),
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: 'true',
+      __VUE_PROD_DEVTOOLS__: 'false'
     })
   ],
   module: {
